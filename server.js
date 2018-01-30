@@ -1,11 +1,6 @@
-var http = require('http');
-//loads http module
-var app=http.createServer(function (req, res) {
-//creates server
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  //sets the right header and status code
-  res.end('Hello World\n');
-  //outputs string with line end symbol
-}).listen(3312);
-//sets port and IP address of the server
-console.log('Server running at http://127.0.0.1:1337/');
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(3312, () => console.log('Example app listening on port 3312!'))
